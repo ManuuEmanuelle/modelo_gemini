@@ -9,7 +9,7 @@ from avaliacao.avaliando_dataset_gerado import avaliar_dataset
 
 def main():
 
-    base_dir = "/home/emanuelle/Projeto de pesquisa/glaucoma_exames/modelo_gemini/dados"
+    base_dir = "/home/emanuelle/Projeto de pesquisa/modelo_gemini/dados"
 
     pasta_pdfs = os.path.join(base_dir, "pdfs")
     #exames_imagens = os.path.join(base_dir, "exames_imagem")
