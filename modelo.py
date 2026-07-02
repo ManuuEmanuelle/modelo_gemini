@@ -151,17 +151,18 @@ def processar_exames(
 
     if os.path.exists(tempos_path):
         with open(tempos_path, "r", encoding="utf-8") as f:
-            tempos_path = json.load(f)
+            tempos = json.load(f)
 
     else:
         tempos = {}
 
 
-    for i, file in enumerate(
-        arquivos_json
-    ):
+    for file in enumerate(arquivos_json):
 
-        #if i >= 25:
+        if isinstance(file, tuple):
+            file = file[1]
+
+        #if i >= 25:    
         #   break
 
         paciente = file.replace(
@@ -223,7 +224,7 @@ def processar_exames(
 
     if tempos_path:
 
-        lista_tempos = list(tempos_path.values())
+        lista_tempos = list(tempos.values())
 
 
         media_tempo = (
